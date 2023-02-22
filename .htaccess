@@ -9,6 +9,16 @@
   <FilesMatch "\.(ico|webp|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
     Header set Cache-Control "max-age=31536000, public"
     Header set Expires "max-age=31536000, public"
+    Header set ETag "W/123456789"
   </FilesMatch>
 </IfModule>
+
+#<IfModule mod_headers.c>
+ # <FilesMatch "\.(js|css|svg|png|jpg|jpeg|gif|webp)$">
+  #  Header set Cache-Control "public, max-age=604800"
+   # Header set Expires "Wed, 22 Feb 2023 12:00:00 GMT"
+    #Header set ETag "W/123456789"
+  #</FilesMatch>
+#</IfModule>
+
 
