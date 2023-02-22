@@ -1,0 +1,5 @@
+# Set caching headers for static assets
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+Header set Cache-Control "max-age=31536000, public"
+Header set Expires "max-age=31536000, public"
+</FilesMatch>
