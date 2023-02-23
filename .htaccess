@@ -9,16 +9,6 @@
   <FilesMatch "\.(ico|webp|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
     Header set Cache-Control "max-age=86400, public"
     Header set Expires "max-age=86400, public"
-    
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "DENY"
-    Header set Content-Security-Policy "default-src 'self'"
-    Header set X-XSS-Protection "1; mode=block"
-
-    
-    # Enable HSTS
-    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
-    Header set ETag "W/123456789"
   </FilesMatch>
 </IfModule>
 
