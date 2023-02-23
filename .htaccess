@@ -10,9 +10,9 @@
     Header set Cache-Control "max-age=86400, public"
     Header set Expires "max-age=86400, public"
     # Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "DENY"
-    Header set Content-Security-Policy "default-src 'self'"
-    Header set X-XSS-Protection "1; mode=block"
+    #Header set X-Frame-Options "DENY"
+    #Header set Content-Security-Policy "default-src 'self'"
+    #Header set X-XSS-Protection "1; mode=block"
   </FilesMatch>
 </IfModule>
 
