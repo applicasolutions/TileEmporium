@@ -6,13 +6,21 @@
 
 # Set caching headers for static assets
 <IfModule mod_headers.c>
+
+  <FilesMatch "\.(ttf|otf|woff|woff2)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  <FilesMatch "\.(eot|ttc|otf|woff|woff2|font.css)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+
   <FilesMatch "\.(ico|webp|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
     Header set Cache-Control "max-age=86400, public"
     Header set Expires "max-age=86400, public"
-    # Header set X-Content-Type-Options "nosniff"
-    #Header set X-Frame-Options "DENY"
-    #Header set Content-Security-Policy "default-src 'self'"
-    #Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set Content-Security-Policy "default-src 'self'"
+    Header set X-XSS-Protection "1; mode=block"
   </FilesMatch>
 </IfModule>
 
